@@ -9,6 +9,9 @@ env:
     global:
         - LANG=pt_BR.UTF-8
         - LC_ALL=pt_BR.UTF-8
+        
+script:
+  - Rscript -e 'rmarkdown::render("index.Rmd")'
 
 r_packages:
   - tidyverse
