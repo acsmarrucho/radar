@@ -1,0 +1,51 @@
+
+@import 'https://fonts.googleapis.com/css?family=Rubik';
+
+body{
+  font-family: Rubik;
+}
+
+.navbar {
+  background-color:rgb(233,233,233);
+  border-color:rgb(233,128,45);
+  font-color:rgb(39,39,38);
+}
+
+.navbar-brand {
+    float: left;
+    height: 50px;
+    padding: 15px 50px;
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 20px;
+}
+
+.disclaimer {
+  font-size:8pt;
+}
+
+.value-box .icon i {
+    font-size: 70px;
+    color: rgba(255, 255, 255, 0.15);
+}
+
+.value-box .value {
+    font-family: Rubik;
+    font-size: 28px;
+    font-weight: bold;
+    margin: 0 0 3px 0;
+    white-space: nowrap;
+    padding: 0;
+}
+
+/*!
+.value-box {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+
+
+*/

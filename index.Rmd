@@ -1,0 +1,163 @@
+---
+title: "Dados do Mercado"
+
+output: 
+  flexdashboard::flex_dashboard:
+    theme: bootstrap
+    css: estilo.css
+    orientation: rows
+    vertical_layout: fill
+    social: [ "twitter", "facebook", "linkedin"]
+    logo: logo.png
+    favicon: favicon.ico
+    navbar:
+      - { title: "TLON", href: "http://www.tlon.com.br", align: right }
+      - { title: "Deseja obter outros dados?", href: "https://www.uqbar.com.br/inteligencia/consultoria/", align: right }
+      
+---
+
+<head>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-40350107-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-40350107-1');
+</script>
+
+</head>
+
+
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+dados <- read.csv2("dados.csv", encoding="UTF-8", stringsAsFactors=FALSE)
+
+```
+
+
+Row {data-height=600}
+-----------------------------------------------------------------------
+### Fundos de Investimento Imobiliário
+```{r}
+valueBox(value = "FII",icon = "fa-building", color = "#FCAF40", href = "http://www.tlon.com.br/fii")
+```
+
+### Patrimônio Líquido da Indústria
+```{r}
+valueBox(value = paste0("R$ ", dados$Valor[2]), icon = "fa-building", color = "#FCAF40", href = "http://www.tlon.com.br/fii")
+```
+
+### Ofertas Registradas em 2020
+```{r}
+valueBox(value = dados$Valor[3], icon = "fa-building", color = "#FCAF40", href = "http://www.tlon.com.br/fii")
+```
+
+### Negociados em 2020
+```{r}
+valueBox(value = paste0("R$ ", dados$Valor[4]), icon = "fa-building", color = "#FCAF40", href = "http://www.tlon.com.br/fii")
+```
+
+### Negócios em 2020
+```{r}
+valueBox(value = dados$Valor[5], icon = "fa-building", color = "#FCAF40", href = "http://www.tlon.com.br/fii")
+```
+
+
+Row {data-height=600}
+-----------------------------------------------------------------------
+### Fundos de Investimento em Direitos Creditórios
+```{r}
+valueBox(value = "FIDC", icon = "fa-file-invoice-dollar", color = "#F27F4B", href = "http://www.tlon.com.br/fidc")
+```
+
+### Patrimônio Líquido da Indústria
+```{r}
+valueBox(value = paste0("R$ ", dados$Valor[7]), icon = "fa-file-invoice-dollar", color = "#F27F4B", href = "http://www.tlon.com.br/fidc")
+```
+
+### Fundos Operacionais
+```{r}
+valueBox(value = dados$Valor[8], icon = "fa-file-invoice-dollar", color = "#F27F4B", href = "http://www.tlon.com.br/fidc")
+```
+
+### Emitidos em 2020
+```{r}
+valueBox(value = paste0("R$ ", dados$Valor[9]), icon = "fa-file-invoice-dollar", color = "#F27F4B", href = "http://www.tlon.com.br/fidc")
+```
+
+### De Captação Líquida em 2020
+```{r}
+valueBox(value = paste0("R$ ", dados$Valor[10]), icon = "fa-file-invoice-dollar", color = "#F27F4B", href = "http://www.tlon.com.br/fidc")
+```
+
+Row {data-height=600}
+-----------------------------------------------------------------------
+### Certificados de Recebíveis Imobiliários
+```{r}
+valueBox(value = "CRI", icon = "fa-home", color = "#E2595C", href = "http://www.tlon.com.br/cri")
+```
+
+### Emitidos em 2020
+```{r}
+valueBox(value = paste0("R$ ", dados$Valor[12]), icon = "fa-home", color = "#E2595C", href = "http://www.tlon.com.br/cri")
+```
+
+### Operações Emitidas em 2020
+```{r}
+valueBox(value = dados$Valor[13], icon = "fa-home", color = "#E2595C", href = "http://www.tlon.com.br/cri")
+```
+
+### De CRI Pulverizados
+```{r}
+valueBox(value = dados$Valor[14], icon = "fa-home", color = "#E2595C", href = "http://www.tlon.com.br/cri")
+```
+
+### De CRI em Estoque
+```{r}
+valueBox(value = paste0("R$ ", dados$Valor[15]), icon = "fa-home", color = "#E2595C", href = "http://www.tlon.com.br/cri")
+```
+
+Row {data-height=600}
+-----------------------------------------------------------------------
+### Certificados de Recebíveis do Agronegócio
+```{r}
+valueBox(value = "CRA", icon = "fa-seedling", color = "#34B7B8", href = "http://www.tlon.com.br/cra")
+```
+
+### Emitidos em 2020
+```{r}
+valueBox(value = paste0("R$ ", dados$Valor[17]), icon = "fa-seedling", color = "#34B7B8", href = "http://www.tlon.com.br/cra")
+```
+
+### Operações Emitidas em 2020
+```{r}
+valueBox(value = dados$Valor[18], icon = "fa-seedling", color = "#34B7B8", href = "http://www.tlon.com.br/cra")
+```
+
+### Em Ofertas Registradas em 2020
+```{r}
+valueBox(value = paste0("R$ ", dados$Valor[19]), icon = "fa-seedling", color = "#34B7B8", href = "http://www.tlon.com.br/cra")
+```
+
+### De CRA em Estoque
+```{r}
+valueBox(value = paste0("R$ ", dados$Valor[20]), icon = "fa-seedling", color = "#34B7B8", href = "http://www.tlon.com.br/cra")
+```
+
+
+
+
+
+Row 
+-----------------------------------------------------------------------
+### Disclaimer {.disclaimer .no-title .no-padding}
+
+Última atualização: `r format(Sys.time(), '%d de %B de %Y')`
+
+`r dados$Valor[21]`. Os valores de FIDC excluem o FIDC Sistema Petrobras NP.
+
+© UQBAR 2020. A distribuição, divulgação, reprodução e/ou utilização de qualquer forma dessas informações é permitida desde que seja divulgada a fonte.
