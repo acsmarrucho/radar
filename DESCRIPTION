@@ -1,0 +1,14 @@
+Package: radar2
+Title: Dashboard de dados do mercado de finanças estruturadas
+Version: 0.1
+Date: 2020-06-23
+Authors@R: person("Alfredo", "Marrucho", 
+           email = "amarrucho@gmail.com",
+           role = c("aut", "cre"))
+Description: Dashboard de dados do mercado de finanças estruturadas
+License: MIT
+RoxygenNote: 6.1.1
+Imports: 
+    tidyverse,
+    rmarkdown,
+    flexdashboard
